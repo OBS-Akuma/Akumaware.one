@@ -3,12 +3,15 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <div className="container">
-      <Image
-        src="/img/meowhehe.gif"
-        alt="meow image"
-        width={200}
-        height={200}
-      />
+      <div className="image-wrapper">
+        <Image
+          src="/img/meowhehe.gif"
+          alt="meow image"
+          width={200}
+          height={200}
+          style={{ objectFit: 'contain' }}
+        />
+      </div>
       <h1 className="float">Hiya meow...</h1>
 
       <style jsx>{`
@@ -22,6 +25,10 @@ export default function Home() {
           color: white;
           text-align: center;
           font-family: sans-serif;
+        }
+        .image-wrapper {
+          background: transparent;
+          line-height: 0;
         }
         h1 {
           font-size: 64px;
